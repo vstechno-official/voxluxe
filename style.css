@@ -1,0 +1,176 @@
+@font-face {
+  font-family: 'motor4F';
+}
+@import url('https://fonts.cdnfonts.com/css/motor4f');
+
+/* ---- colour & font variables ---- */
+:root{
+  --bg-dark:#270804;
+  --glass:rgba(30,30,30,.45);
+  --accent-primary:#4fadfa;   /* orange */
+  --accent-secondary:#ff00c6;  /* magenta */
+  --accent-gradient:conic-gradient(var(--accent-primary),var(--accent-secondary),var(--accent-primary));
+  --text:#eaeaea;
+}
+
+/* ---- reset & base ---- */
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html,body{
+  height:100%;
+  background:var(--bg-dark);
+  color:var(--text);
+  overflow:hidden;
+}
+
+/* ---- task‑bar ---- */
+.taskbar{
+  position:fixed;
+  inset-inline:0;
+  top:0;
+  height:3rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 1rem;
+  backdrop-filter:blur(12px);
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(12px);
+  font-family:'',sans-serif;
+  font-size:1.3rem;
+  color:var(--accent-primary);
+}
+.app-name {
+  font-family: '', sans-serif;
+}
+.icon-btn{
+  background:none;
+  border:none;
+  font-size:1.4rem;
+  cursor:pointer;
+  color:var(--accent-primary);
+}
+div.app-name {
+    font-family: 'motor4F', sans-serif;
+}
+@import url('https://fonts.cdnfonts.com/css/dustismo-2');
+
+/* ---- home---- */
+.center-area{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding-top:3rem;
+}
+
+/* ---- mic animation 
+---- */
+.mic-btn{
+  position:relative;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:#222;
+  cursor:pointer;
+  outline:none;
+  transition:transform .2s;
+}
+.mic-btn::before{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius:50%;
+  background:var(--accent-gradient);
+  animation:rotate 2s linear infinite;
+  pointer-events:none;
+}
+.mic-btn::after{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border-radius:50%;
+  background:#222;
+  pointer-events:none;
+}
+.mic-btn.active{
+  transform:scale(1.07);
+  box-shadow:0 0 20px var(--accent-primary);
+}
+
+/* ---- rotating animaton ---- */
+@keyframes rotate{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+#visualizer{
+  margin-top:2rem;
+  width:90%;
+  max-width:420px;
+  height:auto;
+}
+
+@media (max-width:480px){
+  .mic-btn{
+    width:90px;
+    height:90px;
+  }
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .3s ease;
+}
+.modal.open{
+  opacity:1;
+  visibility:visible;
+}
+
+/* ---- modal content ---- */
+.modal-content{
+  background:#280320;
+  border-radius:12px;
+  padding:1.5rem;
+  max-width:90%;
+  width:320px;
+  position:relative;
+  transform:translateY(20px) scale(.95);
+  opacity:0;
+  transition:transform .3s ease,opacity .3s ease;
+}
+.modal.open .modal-content{
+  transform:translateY(0) scale(1);
+  opacity:1;
+}
+.modal-content h2{
+  font-family:'Bungee',sans-serif;
+  margin-bottom:.5rem;
+  color:#222;
+}
+.modal-content p{
+  font-family:'Inter',sans-serif;
+  color:#444;
+}
+.close-btn{
+  position:absolute;
+  top:.5rem;
+  right:.5rem;
+  background:none;
+  border:none;
+  font-size:1.2rem;
+  cursor:pointer;
+  color:#777;
+}

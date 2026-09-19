@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.cdnfonts.com/css/dustismo-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/motor4f" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>VoxLuxe – a effiicient mic but for fun </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.cdnfonts.com/css/cowboys" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="taskbar">
+    <div class="app-name" style="font-family: 'cowboys';">VoxLuxe</div>
+    <button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙️</button>
+  </header>
+
+  <main class="center-area">
+    <button id="micBtn" class="mic-btn" aria-pressed="false" aria-label="Toggle microphone"></button>
+    <canvas id="visualizer" width="400" height="150" aria-hidden="true"></canvas>
+  </main>
+
+  <!-- Settings modal -->
+  <div id="settingsModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close-btn" aria-label="Close">✖️</button>
+      <h2 id="modalTitle" style="font-family: 'dustismo';">Settings</h2>
+      <div class="modal-section">
+        <h3 style="font-family: 'dustismo';">About VoxLuxe</h3>
+        <p style="font-family: 'dustismo';">VoxLuxe captures audio from your microphone, displays a live frequency visualizer, and optionally plays the sound through your speakers. Use it to monitor microphone levels, visualize audio, or simply have fun with sound-reactive graphics.</p>
+      </div>
+      <div class="modal-section">
+        <h3 style="font-family: 'dustismo';">Settings</h3>
+        <label style="font-family: 'dustismo';">
+          Input Gain:
+          <input style="font-family: 'dustismo';" type="range" id="gainSlider" min="0" max="5" step="0.1" value="2">
+          <span style="font-family: 'dustismo';" id="gainValue">2.0</span>
+        </label>
+        <br>
+        <label style="font-family: 'dustismo';">
+          <input style="font-family: 'dustismo';" type="checkbox" id="passthroughToggle" checked>
+          Play through speakers
+        </label>
+        <br>
+        <label style="font-family: 'dustismo';">
+          Visualizer Style:
+          <select style="font-family: 'dustismo';" id="visualizerStyle">
+            <option value="bars" style="font-family: 'dustismo';">Bars</option>
+            <option value="wave" style="font-family: 'dustismo';">Wave</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
