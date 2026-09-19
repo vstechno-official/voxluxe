@@ -14,3 +14,11 @@
 <li>problem: a few days ago there was ganesh chaturthi celebration but my mike was out of working condition and wouldn't pair with the speaker causing nuisance and disappointment in my mind and in the program.</li>
 <li>solution/idea: what if we create an webapp/app that allows the device to act as a mic and it produces voice at the same instant. We could add aesthetic but simple animations to attract attention and usefulness to the webapp using certain commonly used settings in a modal.</li>
 </ul>
+
+### How you can use it fast, rapidly?
+<ul>
+<li>Just go to https://vstechno-official.github.io/voxluxe/ and allow the mic permissions(make sure u are connected to another speaker not the device one) and you are ready to go</li>
+</ul>
+
+##### Signing off,
+#### Vedant
